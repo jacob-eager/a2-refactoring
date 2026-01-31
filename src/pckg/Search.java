@@ -8,66 +8,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Search {
-
-	public static void test(List<Book> list) {
-		
-		Scanner scnr = new Scanner(System.in);
-		
-		System.out.println("Search for top 10 or exact match?");
-		
-		String searchBreadth = scnr.nextLine();
-		
-		System.out.println("Sort by ISBN or book_id?");
-		
-		String searchType = scnr.nextLine();
-		
-		System.out.println("Enter search: ");
-		
-		String search = scnr.nextLine();
-		
-		
-		if (searchBreadth.equalsIgnoreCase("top 10")) {
-			if (searchType.equalsIgnoreCase("isbn")) {
-				list = top10ByISBN(list, search);
-				System.out.println("Printing top matches:");
-				for (int i = 0; i < 10 && i < list.size(); ++i) {
-					System.out.println(list.get(i));
-				}
-			}
-			else if (searchType.equalsIgnoreCase("book_id")) {
-				list = top10ByID(list, Integer.parseInt(search));
-				System.out.println("Printing top matches:");
-				for (int i = 0; i < 10 && i < list.size(); ++i) {
-					System.out.println(list.get(i));
-				}
-			}
-		}
-		else if (searchBreadth.equalsIgnoreCase("exact")) {
-			if (searchType.equalsIgnoreCase("isbn")) {
-				
-				List<Book> sortedList = Sort.byISBN(list);
-				
-				ArrayList<Book> convertedList = new ArrayList<Book>(sortedList);
-				
-				Book foundBook = byISBN(convertedList, search);
-				
-				System.out.println(foundBook.equals(null) ? "No match found" : foundBook);
-			}
-			else if (searchType.equalsIgnoreCase("book_id")) {
-				
-				List<Book> sortedList = Sort.byID(list);
-				
-				ArrayList<Book> convertedList = new ArrayList<Book>(sortedList);
-				
-				Book foundBook = byID(convertedList, Integer.valueOf(search));
-				
-				System.out.println(foundBook == null ? "No match found" : foundBook);
-			}
-		}
-		
-		
-		scnr.close();
-	}
 	
 	public static void time(List<Book> list) {
 		
