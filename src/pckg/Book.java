@@ -85,5 +85,28 @@ public class Book {
     public String toString() {
         return bookID + ": " + title + " by " + authors + " (Rating: " + averageRating + ")";
     }
+
+	// There's probably an easier way to do this
+	public int compareTo(Object o) {
+		if (o instanceof String) return compareTo((String)o);
+		if (o instanceof Integer) return compareTo((Integer)o);
+		return -1; // should be unreachable
+	}
+	
+	public int compareTo(String compISBN) {
+		
+		if (String.valueOf(isbn13).equals(compISBN)) return 0;
+		
+		return isbn.compareTo(compISBN);
+	}
+	
+	public int compareTo(Integer compID) {
+		
+		if (bookID == compID) return 0;
+		
+		if (bookID > compID) return 1;
+		
+		return -1;
+	}
 	
 }

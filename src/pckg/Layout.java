@@ -97,7 +97,7 @@ public class Layout extends JFrame {
                 Book foundBook = null;
 
                 try {
-                    int bookId = Integer.parseInt(input);
+                    Integer bookId = Integer.parseInt(input);
                     
                     if (bookId > 10000) {
                     	throw new NumberFormatException(); // Checks if input is an ISBN
@@ -107,13 +107,13 @@ public class Layout extends JFrame {
                     
                     
                     
-                    foundBook = Search.byID(convertedList, bookId);
+                    foundBook = Search.binarySearch(convertedList, bookId);
                 } catch (NumberFormatException nfe1) {
                     try {
                         String isbn = input;
                         ArrayList<Book> convertedList = new ArrayList<Book>(Sort.byISBN(Main.list));
                         
-                        foundBook = Search.byISBN(convertedList, isbn);
+                        foundBook = Search.binarySearch(convertedList, isbn);
                     } catch (NumberFormatException nfe2) {
                         textArea.setText("Invalid input. Enter a number for Book ID or ISBN.");
                         return;

@@ -20,14 +20,14 @@ public class Search {
 		
 		Sort.byISBN(arrayList);
 		startTime = System.currentTimeMillis();
-		byISBN(arrayList, "345418263");
+		binarySearch(arrayList, "345418263");
 		endTime = System.currentTimeMillis();
 		totalTime = endTime - startTime;
 		System.out.println("Time for byISBN() Array List Binary Search: " + totalTime + "ms");
 		
 		Sort.byID(arrayList);
 		startTime = System.currentTimeMillis();
-		byID(arrayList, rand.nextInt(1,999));
+		binarySearch(arrayList, rand.nextInt(1,999));
 		endTime = System.currentTimeMillis();
 		totalTime = endTime - startTime;
 		System.out.println("Time for byID() Array List Binary Search: " + totalTime + "ms");
@@ -66,68 +66,34 @@ public class Search {
 	/* ArrayList - Binary Search (finds exact match, input must be sorted) */
 	
 	
-	
-	public static Book byISBN(ArrayList<Book> list, String s) {
+	public static Book binarySearch(ArrayList<Book> list, Object o) {
 		
 		int min = 0;
-		
 		int max = list.size() - 1; 
-		
 		int mid = min + (max - min) / 2;
-		
-		Book currBook;
-		
-		while (min >= max) {
-			
-			currBook = list.get(mid);
-			
-			
-			if (currBook.isbn.equalsIgnoreCase(s) || String.valueOf(currBook.isbn13).equals(s)) {
-				return currBook;
-			}
-			if (currBook.isbn.compareTo(s) > 0) {
-				max = mid - 1;
-				mid = min + (max - min) / 2;
-				continue;
-			}
-			else if (currBook.isbn.compareTo(s) < 0) {
-				min = mid + 1;
-				mid = min + (max - min) / 2;
-				continue;
-			}
-		}
-		return null;
-	}
-	
-	public static Book byID(ArrayList<Book> list, int s) {
-		
-		int min = 0;
-		
-		int max = list.size() - 1; 
-		
-		int mid = min + (max - min) / 2;
-		
 		Book currBook;
 		
 		while (min <= max) {
 			
 			currBook = list.get(mid);
 			
-			if (currBook.bookID == s) {
+			if (currBook.compareTo(o) == 0) {
 				return currBook;
 			}
-			if (currBook.bookID > s) {
+			if (currBook.compareTo(o) > 0) {
 				max = mid - 1;
 				mid = min + (max - min) / 2;
 				continue;
 			}
-			else if (currBook.bookID < s) {
+			else if (currBook.compareTo(o) < 0) {
 				min = mid + 1;
 				mid = min + (max - min) / 2;
 				continue;
 			}
-			
 		}
 		return null;
 	}
+	
+	
+	
 }
