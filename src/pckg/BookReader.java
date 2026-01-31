@@ -10,6 +10,8 @@ import java.util.regex.Pattern;
 
 public class BookReader {
 	
+	private static final int NUM_FIELDS = 23;
+	
 	public static final String[] DEFAULT_VALUES = {
 			"-1", "-1", "-1", "-1", "-1", // IDs
 			"000000000X", "0", 
@@ -92,7 +94,7 @@ public class BookReader {
 
 	private static String[] safeCSVSplit(String s) {
 		
-		String[] array = new String[23];
+		String[] array = new String[NUM_FIELDS];
 		var sb = new StringBuilder();
 		boolean inQuotes = false;
 		int index = 0;

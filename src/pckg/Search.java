@@ -6,8 +6,6 @@ import java.util.Random;
 
 public class Search {
 
-	
-	
 	public static void time(List<Book> list) {
 		
 		Random rand = new Random();
@@ -66,6 +64,8 @@ public class Search {
 	
 	
 	/* ArrayList - Binary Search (finds exact match, input must be sorted) */
+	
+	
 	
 	public static Book byISBN(ArrayList<Book> list, String s) {
 		
@@ -126,7 +126,6 @@ public class Search {
 				mid = min + (max - min) / 2;
 				continue;
 			}
-			
 			
 		}
 		return null;
