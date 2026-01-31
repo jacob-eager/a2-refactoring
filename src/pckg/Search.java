@@ -82,14 +82,12 @@ public class Search {
 			}
 			if (currBook.compareTo(o) > 0) {
 				max = mid - 1;
-				mid = min + (max - min) / 2;
-				continue;
 			}
 			else if (currBook.compareTo(o) < 0) {
 				min = mid + 1;
-				mid = min + (max - min) / 2;
-				continue;
 			}
+			
+			mid = min + (max - min) / 2;
 		}
 		return null;
 	}
