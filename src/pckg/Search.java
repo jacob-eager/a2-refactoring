@@ -1,8 +1,6 @@
 package pckg;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -79,13 +77,10 @@ public class Search {
 		
 		Book currBook;
 		
-		while (true) {
+		while (min >= max) {
 			
 			currBook = list.get(mid);
 			
-			if (min >= max) {
-				return null;
-			}
 			
 			if (currBook.isbn.equalsIgnoreCase(s) || String.valueOf(currBook.isbn13).equals(s)) {
 				return currBook;
@@ -101,6 +96,7 @@ public class Search {
 				continue;
 			}
 		}
+		return null;
 	}
 	
 	public static Book byID(ArrayList<Book> list, int s) {
@@ -113,13 +109,9 @@ public class Search {
 		
 		Book currBook;
 		
-		while (true) {
+		while (min <= max) {
 			
 			currBook = list.get(mid);
-			
-			if (min >= max) {
-				return null;
-			}
 			
 			if (currBook.bookID == s) {
 				return currBook;
@@ -137,5 +129,6 @@ public class Search {
 			
 			
 		}
+		return null;
 	}
 }
