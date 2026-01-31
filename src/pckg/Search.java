@@ -65,7 +65,6 @@ public class Search {
 	
 	/* ArrayList - Binary Search (finds exact match, input must be sorted) */
 	
-	
 	public static Book binarySearch(ArrayList<Book> list, Object o) {
 		
 		int min = 0;
@@ -91,7 +90,5 @@ public class Search {
 		}
 		return null;
 	}
-	
-	
 	
 }

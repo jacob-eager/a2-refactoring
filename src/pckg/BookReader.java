@@ -3,6 +3,7 @@ package pckg;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
@@ -34,8 +35,7 @@ public class BookReader {
 
 	public static List<Book> readBooks() {
 		
-		// Change this to ArrayList for different implementation
-		List<Book> list = new LinkedList<Book>();
+		List<Book> list = new ArrayList<Book>();
 		try (FileInputStream fis = new FileInputStream("data/books.csv");
 				Scanner scnr = new Scanner(fis);) {
 			
@@ -72,9 +72,9 @@ public class BookReader {
 			    Integer.parseInt(fields[3]), // work_id
 			    Integer.parseInt(fields[4]), // books_count
 			    fields[5], 					// isbn 
-			    (long)Double.parseDouble(fields[6]),                  // isbn13
+			    (long)Double.parseDouble(fields[6]), // isbn13
 			    fields[7],                  // authors
-			    (int)Double.parseDouble(fields[8]),         // originalPublicationYear
+			    (int)Double.parseDouble(fields[8]), // originalPublicationYear
 			    fields[9],                  // originalTitle
 			    fields[10],                 // title
 			    fields[11],                 // languageCode

@@ -246,7 +246,6 @@ public class Layout extends JFrame {
         // Disable layout manager so we can set coordinates manually
         bookshelfPanel.setLayout(null);
 
-
         int shelfHeight = 40;
         int shelfIndex = 2;
         int buttonWidth = 200;
