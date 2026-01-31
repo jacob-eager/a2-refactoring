@@ -80,29 +80,6 @@ public class Search {
 		return sortedList;
 	}
 	
-	/* LinkedList - Linear Search (finds exact match) */
-	
-	public static Book byISBN(LinkedList<Book> list, String s) {
-		
-		for (int i = 0; i < list.size(); ++i) {
-			if (list.get(i).isbn.equals(s) || String.valueOf(list.get(i).isbn13).equals(s)) {
-				return list.get(i);
-			}
-		}
-		
-		return null;
-	}
-	
-	public static Book byID(LinkedList<Book> list, int s) {
-		
-		for (int i = 0; i < list.size() - 1; ++i) {
-			if (list.get(i).bookID == s) {
-				return list.get(i);
-			}
-		}
-		
-		return null;
-	}
 	
 	/* ArrayList - Binary Search (finds exact match, input must be sorted) */
 	
