@@ -5,9 +5,10 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Search {
+
+	
 	
 	public static void time(List<Book> list) {
 		
@@ -16,7 +17,6 @@ public class Search {
 		System.out.println("List size: " + list.size());
 		
 		ArrayList<Book> arrayList = new ArrayList<Book>(list);
-		LinkedList<Book> linkedList = new LinkedList<Book>(list);
 		
 		long startTime;
 		long endTime;
@@ -26,30 +26,16 @@ public class Search {
 		startTime = System.currentTimeMillis();
 		byISBN(arrayList, "345418263");
 		endTime = System.currentTimeMillis();
-		totalTime = startTime - endTime;
+		totalTime = endTime - startTime;
 		System.out.println("Time for byISBN() Array List Binary Search: " + totalTime + "ms");
 		
 		Sort.byID(arrayList);
 		startTime = System.currentTimeMillis();
 		byID(arrayList, rand.nextInt(1,999));
 		endTime = System.currentTimeMillis();
-		totalTime = startTime - endTime;
+		totalTime = endTime - startTime;
 		System.out.println("Time for byID() Array List Binary Search: " + totalTime + "ms");
 		
-		
-		Collections.shuffle(linkedList);
-		startTime = System.currentTimeMillis();
-		byISBN(linkedList, "345418263");
-		endTime = System.currentTimeMillis();
-		totalTime = startTime - endTime;
-		System.out.println("Time for byISBN() Linked List Linear Search: " + totalTime + "ms");
-		
-		Collections.shuffle(linkedList);
-		startTime = System.currentTimeMillis();
-		byID(linkedList, rand.nextInt(1,999));
-		endTime = System.currentTimeMillis();
-		totalTime = startTime - endTime;
-		System.out.println("Time for byID() Linked List Linear Search: " + totalTime + "ms");
 	}
 	
 	/* General List<Book> search (returns top matches) */
@@ -131,6 +117,10 @@ public class Search {
 			
 			currBook = list.get(mid);
 			
+			if (min >= max) {
+				return null;
+			}
+			
 			if (currBook.bookID == s) {
 				return currBook;
 			}
@@ -145,9 +135,7 @@ public class Search {
 				continue;
 			}
 			
-			if (min >= max) {
-				return null;
-			}
+			
 		}
 	}
 }
