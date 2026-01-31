@@ -166,10 +166,6 @@ public class Layout extends JFrame {
                     listFrame.add(new JScrollPane(textArea));
                     listFrame.setVisible(true);
 
-                    // Timer to close after a few seconds
-//                    Timer timer = new Timer(2000, ev -> listFrame.dispose());
-//                    timer.setRepeats(false);
-//                    timer.start();
                 });
             
             JButton button6 = new JButton("Sort by Author Descending");
@@ -195,10 +191,6 @@ public class Layout extends JFrame {
                     listFrame.add(new JScrollPane(textArea));
                     listFrame.setVisible(true);
 
-                    // Timer to close after a few seconds
-//                    Timer timer = new Timer(2000, ev -> listFrame.dispose());
-//                    timer.setRepeats(false);
-//                    timer.start();
                 });
             JButton button7 = new JButton("Sort by Publication Year Ascending");
             button7.setBounds(50, 150, 200, 30);
@@ -222,10 +214,6 @@ public class Layout extends JFrame {
                     listFrame.add(new JScrollPane(textArea));
                     listFrame.setVisible(true);
 
-                    // Timer to close after a few seconds
-//                    Timer timer = new Timer(2000, ev -> listFrame.dispose());
-//                    timer.setRepeats(false);
-//                    timer.start();
                 });
                 
             JButton button8 = new JButton("Sort by Publication Year Descending");
@@ -250,10 +238,6 @@ public class Layout extends JFrame {
                     listFrame.add(new JScrollPane(textArea));
                     listFrame.setVisible(true);
 
-                    // Timer to close after a few seconds
-//                    Timer timer = new Timer(2000, ev -> listFrame.dispose());
-//                    timer.setRepeats(false);
-//                    timer.start();
                 });
 
             newFrame.add(panel);
